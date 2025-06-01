@@ -6,6 +6,7 @@ public class Card implements Comparable<Card>{
         char raw_value = vaule_suit.charAt(0);
         this.suit = vaule_suit.charAt(1);
         
+        // convert raw card value to compareable value
         switch (raw_value) {
             case 'T': this.value = 10; break;
             case 'J': this.value = 11; break;
@@ -17,7 +18,7 @@ public class Card implements Comparable<Card>{
         }
     }
     
-    public int getRawValue() {
+    public int getValue() {
         return value;
     }
     
