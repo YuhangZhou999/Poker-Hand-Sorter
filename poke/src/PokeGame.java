@@ -13,6 +13,7 @@ public class PokeGame {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(input))) {
             String line;
             while ((line = reader.readLine()) != null) {
+                // get cards and split to two hands
                 String[] cards = line.trim().split(" ");
                 if (cards.length != 10) {
                     continue;
@@ -28,6 +29,7 @@ public class PokeGame {
                     p2cards.add(new Card(cards[i]));
                 }
                 
+                // compare hands
                 Hand p1hand = new Hand(p1cards);
                 Hand p2hand = new Hand(p2cards);
                 

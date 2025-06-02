@@ -13,7 +13,7 @@ public class Hand implements Comparable<Hand>{
         this.uni_values = result.highcard_list;
     }
     
-    
+    // use this function to parse hand rank and value
     private HandResult Evaluate() {
         Map<Integer, Integer> num_counts = new HashMap<>();
         boolean is_flush = true;
@@ -22,6 +22,7 @@ public class Hand implements Comparable<Hand>{
         // count cards nums
         char suit = this.cards.get(0).getSuit();
         for (Card card : this.cards) {
+            // check whether flush
             if (card.getSuit() != suit) {
                 is_flush = false;
             }
@@ -93,6 +94,7 @@ public class Hand implements Comparable<Hand>{
         
     }
     
+    // compare hand, first key rank, second key sorted card value
     @Override
     public int compareTo(Hand o) {
         // different rank, return the compare result
